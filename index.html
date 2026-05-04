@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HelpFarma — Farmácia & Drogaria · Iputinga, Recife</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e8001c;--red-l:#ff3355;--blue:#0d1845;--blue-m:#1a3cff;--blue-l:#4488ff;--white:#fff;--off:#f7f8fc;--gray:#6b7280;--gray-l:#e5e7eb;--text:#111827}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);padding:0 40px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow 0.3s}
+.ni{width:36px;height:36px;background:linear-gradient(135deg,var(--red),var(--red-l));border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(232,0,28,0.3)}
+.nl{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--blue)}
+.nl span{color:var(--red)}
+.nls a{text-decoration:none;color:var(--gray);font-size:14px;font-weight:500;padding:8px 14px;border-radius:8px;transition:0.2s}
+.nls a:hover,.nls a.act{color:var(--blue);background:var(--off)}
+.ncta{background:linear-gradient(135deg,var(--red),var(--red-l));color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;box-shadow:0 4px 14px rgba(232,0,28,0.3)}
+.pg{display:none;padding-top:68px}.pg.act{display:block}
+.hero{min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue) 0%,#0d2060 100%);padding:80px 40px}
+.htit{font-family:'Playfair Display',serif;font-size:clamp(42px,5vw,64px);font-weight:900;color:#fff;line-height:1.0;letter-spacing:-2px;margin-bottom:20px}
+.bp{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,var(--red),var(--red-l));color:#fff;font-weight:700;font-size:14px;padding:14px 28px;border-radius:100px;text-decoration:none;box-shadow:0 8px 24px rgba(232,0,28,0.4)}
+.wa{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,0.45);text-decoration:none;font-size:28px}
+/* ... Demais estilos simplificados para o exemplo ... */
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a class="nb" href="#" onclick="sp('home')">
+    <div class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg></div>
+    <div class="nl">Help<span>Farma</span></div>
+  </a>
+  <div class="nls">
+    <a href="#" onclick="sp('home')" class="act" id="n-home">Início</a>
+    <a href="#" onclick="sp('about')" id="n-about">Sobre</a>
+    <a href="#" onclick="sp('products')" id="n-products">Produtos</a>
+    <a href="#" onclick="sp('contact')" id="n-contact">Contato</a>
+  </div>
+  <a href="https://wa.me/5581999560696" target="_blank" class="ncta">WhatsApp</a>
+</nav>
+
+<div class="pg act" id="pg-home">
+  <section class="hero">
+    <div class="hi" style="max-width:1100px;margin:0 auto;color:white">
+      <div style="background:rgba(255,255,255,0.1);padding:6px 14px;border-radius:100px;display:inline-block;margin-bottom:20px">Iputinga · Recife, PE</div>
+      <h1 class="htit">Sua saúde em boas mãos</h1>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:30px;max-width:500px">Farmácia e drogaria completa com medicamentos e atendimento humanizado.</p>
+      <a href="https://wa.me/5581999560696" target="_blank" class="bp">Falar com Farmacêutico</a>
+    </div>
+  </section>
+</div>
+
+<a href="https://wa.me/5581999560696" target="_blank" class="wa">💬</a>
+
+<script>
+function sp(n){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('act'));
+  document.querySelectorAll('.nls a').forEach(a=>a.classList.remove('act'));
+  document.getElementById('pg-'+n).classList.add('act');
+  document.getElementById('n-'+n).classList.add('act');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
