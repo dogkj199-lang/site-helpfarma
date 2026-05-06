@@ -404,13 +404,49 @@ footer{background:var(--blue);padding:60px 40px 30px;position:relative;overflow:
     <div class="stag"><span>O que oferecemos</span></div>
     <h2 class="stit">Serviços <span>completos</span><br>para sua saúde</h2>
     <p class="ssub">Tudo que você precisa para cuidar da sua saúde e da sua família.</p>
-    <div class="sg">
-      <div class="svc cr"><span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(232,0,28,0.1);border-radius:14px;color:var(--red);margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v7"/><path d="M16.5 21.5a4.5 4.5 0 000-9 4.5 4.5 0 000 9z"/><path d="M13.5 18h6"/></svg></span><div class="sn">Medicamentos</div><p class="sdesc">Genéricos e de referência com preços acessíveis.</p></div>
-      <div class="svc cb"><span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(0,168,107,0.1);border-radius:14px;color:#00a86b;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34A1 1 0 004.63 21C8 20 16 19 17 8z"/><path d="M17 8L12 13"/></svg></span><div class="sn">Suplementos</div><p class="sdesc">Vitaminas e minerais das melhores marcas.</p></div>
-      <div class="svc co"><span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(255,136,0,0.1);border-radius:14px;color:#ff8800;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><div class="sn">Cosméticos</div><p class="sdesc">Linha completa de beleza e higiene pessoal.</p></div>
-      <div class="svc cr"><span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(26,60,255,0.1);border-radius:14px;color:var(--blue-m);margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 105 2H4a2 2 0 00-2 2v5a6 6 0 006 6 6 6 0 006-6V4a2 2 0 00-2-2h-1a.2.2 0 10.3.3"/><path d="M8 15v1a6 6 0 006 6 6 6 0 006-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span><div class="sn">Orientação Farmacêutica</div><p class="sdesc">Farmacêutico disponível para orientar você.</p></div>
-      <div class="svc cb"><span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(232,0,28,0.1);border-radius:14px;color:var(--red);margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span><div class="sn">Entrega Grátis</div><p class="sdesc">Entregamos em Iputinga e região via WhatsApp!</p></div>
-      <div class="svc co"><span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(255,136,0,0.1);border-radius:14px;color:#ff8800;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg></span><div class="sn">Pedido Online</div><p class="sdesc">Monte seu pedido no site e envie pelo WhatsApp!</p></div>
+    <style>
+.svc{cursor:default}
+.svc.clickable{cursor:pointer}
+.svc.clickable:hover .svc-arrow{opacity:1;transform:translateX(0)}
+.svc-arrow{opacity:0;transform:translateX(-6px);transition:opacity 0.2s,transform 0.2s;font-size:13px;font-weight:700;color:var(--red);margin-top:10px;display:flex;align-items:center;gap:4px}
+</style>
+<div class="sg">
+      <div class="svc cr clickable" onclick="goToProducts('Dor e Febre')">
+        <span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(232,0,28,0.1);border-radius:14px;color:var(--red);margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v7"/><path d="M16.5 21.5a4.5 4.5 0 000-9 4.5 4.5 0 000 9z"/><path d="M13.5 18h6"/></svg></span>
+        <div class="sn">Medicamentos</div>
+        <p class="sdesc">Genéricos e de referência com preços acessíveis.</p>
+        <div class="svc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Ver produtos</div>
+      </div>
+      <div class="svc cb clickable" onclick="goToProducts('Vitaminas e Suplementos')">
+        <span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(0,168,107,0.1);border-radius:14px;color:#00a86b;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 19.34A1 1 0 004.63 21C8 20 16 19 17 8z"/><path d="M17 8L12 13"/></svg></span>
+        <div class="sn">Suplementos</div>
+        <p class="sdesc">Vitaminas e minerais das melhores marcas.</p>
+        <div class="svc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Ver produtos</div>
+      </div>
+      <div class="svc co clickable" onclick="goToProducts('all')">
+        <span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(255,136,0,0.1);border-radius:14px;color:#ff8800;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <div class="sn">Cosméticos</div>
+        <p class="sdesc">Linha completa de beleza e higiene pessoal.</p>
+        <div class="svc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Ver produtos</div>
+      </div>
+      <div class="svc cr clickable" onclick="goToProducts('all')">
+        <span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(26,60,255,0.1);border-radius:14px;color:var(--blue-m);margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 105 2H4a2 2 0 00-2 2v5a6 6 0 006 6 6 6 0 006-6V4a2 2 0 00-2-2h-1a.2.2 0 10.3.3"/><path d="M8 15v1a6 6 0 006 6 6 6 0 006-6v-4"/><circle cx="20" cy="10" r="2"/></svg></span>
+        <div class="sn">Orientação Farmacêutica</div>
+        <p class="sdesc">Farmacêutico disponível para orientar você.</p>
+        <div class="svc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Fale conosco</div>
+      </div>
+      <div class="svc cb clickable" onclick="window.open('https://wa.me/5581999560696','_blank')">
+        <span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(232,0,28,0.1);border-radius:14px;color:var(--red);margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+        <div class="sn">Entrega Grátis</div>
+        <p class="sdesc">Entregamos em Iputinga e região via WhatsApp!</p>
+        <div class="svc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Chamar no WhatsApp</div>
+      </div>
+      <div class="svc co clickable" onclick="goToProducts('all')">
+        <span class="se" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;background:rgba(255,136,0,0.1);border-radius:14px;color:#ff8800;margin-bottom:18px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 001.98 1.61h9.72a2 2 0 001.98-1.61L23 6H6"/></svg></span>
+        <div class="sn">Pedido Online</div>
+        <p class="sdesc">Monte seu pedido no site e envie pelo WhatsApp!</p>
+        <div class="svc-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Montar pedido</div>
+      </div>
     </div>
   </div></section>
   <div class="istrip"><div class="isb"></div><div class="isi">
@@ -1765,6 +1801,33 @@ footer{background:var(--blue);padding:60px 40px 30px;position:relative;overflow:
 
 <script>
 // Navigation
+function goToProducts(cat) {
+  sp('products');
+  setTimeout(() => {
+    if(cat === 'all') {
+      const allBtn = document.querySelector('.cat-filter.active');
+      if(allBtn) allBtn.click();
+      const allFilter = document.querySelector('.cat-filter');
+      if(allFilter) { currentCat='all'; filterProducts(); }
+      document.querySelectorAll('.cat-filter').forEach(f=>f.classList.remove('active'));
+      document.querySelector('.cat-filter').classList.add('active');
+      currentCat='all';
+      filterProducts();
+    } else {
+      const btn = Array.from(document.querySelectorAll('.cat-filter')).find(f=>f.onclick && f.getAttribute('onclick') && f.getAttribute('onclick').includes(cat));
+      if(btn) btn.click();
+      else {
+        currentCat = cat;
+        document.querySelectorAll('.cat-filter').forEach(f=>f.classList.remove('active'));
+        const match = Array.from(document.querySelectorAll('.cat-filter')).find(f=>(f.getAttribute('onclick')||'').includes("'"+cat+"'"));
+        if(match) match.classList.add('active');
+        filterProducts();
+      }
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
+  }, 100);
+}
+
 function sp(n){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('act'));
   document.querySelectorAll('.nls a').forEach(a=>a.classList.remove('act'));
